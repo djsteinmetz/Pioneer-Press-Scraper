@@ -1,1 +1,1 @@
-# cnn-politics-scraper
+# Pioneer Press Scraper
