@@ -33,7 +33,6 @@ mongoose.connect(config.database)
 // require("./controllers/controller")(app);
 //setting up routes
 require('./controllers/index')(app),
-require('./controllers/articles')(app),
 require('./controllers/notes')(app),
 require('./controllers/scrape')(app);
 
