@@ -1,0 +1,10 @@
+{{#each articles}}
+<div class="card" data-id={{_id}}>
+    <img class="card-img-top" src="{{imgUrl}}" alt="Article Image">
+    <div class="card-body">
+        <h3 class="card-title">{{title}}</h3>
+        <p class="card-text">{{byLine}}</p>
+        <a href="{{link}}" class="btn btn-primary" target="_blank">Full Article</a>
+    </div>
+</div>
+{{/each}}
