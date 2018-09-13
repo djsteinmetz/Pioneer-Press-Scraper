@@ -1,18 +1,47 @@
+<div id="mySidebar" class="sidepanel">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+  <div class="d-flex justify-content-center" id="notes">
+    <div id="card-note">
+      <h3 style="font-size: 22px" id="articleTitle"></h3>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup">Note Title</span>
+        </div>
+        <input type="text" class="form-control" aria-label="Note Title" aria-describedby="inputGroup">
+      </div>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Note body</span>
+        </div>
+        <textarea class="form-control" aria-label="Note body"></textarea>
+      </div>
+      <button class='btn btn-dark thin' data-id='${article._id}' id='savenote'>Save Note</button>
+    </div>
+  </div>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
       <h2><span class="bold">MINNESOTA</span><span class="thin">NEWS</span></h2>
     </div>
     <div class="col-md-12">
-      <a href="/articles/new" class="btn btn-dark btn-lg thin">SCRAPE</a>
+      <a href="/articles" class="btn btn-dark btn-lg thin">SCRAPE</a>
     </div>
-    <div class="col-md-8" id="articles">
+    <div class="col-lg-12" id="articles">
       <div class="card-columns">
         {{>articles/articles-block}}
       </div>
     </div>
-    <div class="col-md-4">
-      <div id="notes"></div>
-    </div>
   </div>
 </div>
+<script>
+  function openNav() {
+    document.getElementById("mySidebar").style.height = "280px";
+    document.getElementById("notes").style.width = "100%";
+  }
+
+  /* Set the width of the sidebar to 0 (hide it) */
+  function closeNav() {
+    document.getElementById("mySidebar").style.height = "0";
+  }
+</script>

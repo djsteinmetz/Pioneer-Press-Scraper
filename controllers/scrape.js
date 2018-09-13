@@ -7,7 +7,7 @@ const express = require('express'),
 //route to scrape new articles
 //route to scrape new articles
 module.exports = app => {
-    app.get("/articles/new", (req, res) => {
+    app.get("/articles", (req, res) => {
         //configuring options object for request-promist
         const options = {
             uri: 'https://www.twincities.com/tag/minnesota/',
@@ -59,5 +59,5 @@ module.exports = app => {
                     .catch(err => console.log(err)); //end of rp method
             })
             .catch(err => console.log(err)); //end of db.Article.find()
-    });// end of get request to /scrape
+    });// end of get request to /articles/new
 }
