@@ -34,6 +34,7 @@ mongoose.connect(config.database)
 //setting up routes
 require('./controllers/index')(app),
 require('./controllers/notes')(app),
+require('./controllers/articles')(app),
 require('./controllers/scrape')(app);
 
 // Start the server

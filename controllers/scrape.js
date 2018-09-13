@@ -54,7 +54,7 @@ module.exports = app => {
                         db.Article
                             .create(newArticleArr)
                             .then((result) => res.json(result))//returning count of new articles to front end
-                            .catch(err => { });
+                            .catch(err => {console.log(err)});
                     })
                     .catch(err => console.log(err)); //end of rp method
             })
