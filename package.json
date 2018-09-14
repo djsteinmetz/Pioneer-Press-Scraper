@@ -1,0 +1,31 @@
+{
+  "name": "pioneer-press-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mongoose": "^5.2.14",
+    "morgan": "^1.9.1",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node server.js",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/djsteinmetz/Pioneer-Press-Scraper.git"
+  },
+  "author": "DJ Steinmetz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/djsteinmetz/Pioneer-Press-Scraper/issues"
+  },
+  "homepage": "https://github.com/djsteinmetz/Pioneer-Press-Scraper#readme"
+}
