@@ -21,19 +21,21 @@ h2 {
 #articles {
     margin-top: 25px;
 }
-div.sticky {
-    z-index: 1000;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-}
 #cardNote {
     top: 25px;
     margin-bottom: 50px;
 }
 #notes {
-    width: 0;
-    padding: 25px;
+    width: 80%;
+    padding: 55px;
+    
+}
+#noteSection {
+    text-decoration: underline;
+}
+.input-group {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 /* Sidepanel */
 .sidepanel {
@@ -43,7 +45,7 @@ div.sticky {
     z-index: 1; /* Stay on top */
     top: 0;
     left: 0;
-    background-color: #f2f2f2; /* Black*/
+    background-color: #f2f2f2ef; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     /* padding-top: 60px; Place content 60px from the top */
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */

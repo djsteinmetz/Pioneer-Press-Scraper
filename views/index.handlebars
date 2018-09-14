@@ -2,20 +2,23 @@
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
   <div class="d-flex justify-content-center" id="notes">
     <div id="card-note">
-      <h3 style="font-size: 22px" id="articleTitle"></h3>
+      <h3 class="bold" id="articleTitle"></h3>
       <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text" id="inputGroup">Note Title</span>
         </div>
-        <input type="text" class="form-control" aria-label="Note Title" aria-describedby="inputGroup">
+        <input type="text" class="form-control" aria-label="Note Title" aria-describedby="inputGroup" id="titleinput">
       </div>
       <div class="input-group">
         <div class="input-group-prepend">
           <span class="input-group-text">Note body</span>
         </div>
-        <textarea class="form-control" aria-label="Note body"></textarea>
+        <textarea class="form-control" aria-label="Note body" id="bodyinput"></textarea>
       </div>
-      <button class='btn btn-dark thin' data-id='${article._id}' id='savenote'>Save Note</button>
+      <h3 id="noteSection"></h3>
+      <h4 class="bold" id="noteTitle"></h3>
+      <p class="thin" id="noteBody"></p>
+      <div id="button"></div>
     </div>
   </div>
 </div>
@@ -36,8 +39,7 @@
 </div>
 <script>
   function openNav() {
-    document.getElementById("mySidebar").style.height = "280px";
-    document.getElementById("notes").style.width = "100%";
+    document.getElementById("mySidebar").style.height = "100%";
   }
 
   /* Set the width of the sidebar to 0 (hide it) */
