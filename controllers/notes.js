@@ -37,8 +37,9 @@ module.exports = app => {
             });
     });
     //post route to delete a note
-    app.post('/deleteNote', (req, res) => {
-        let { articleId, noteId } = req.body;
+    app.post('/articles/:articleID/note/delete', (req, res) => {
+        const articleId = req.params.articleID;
+        const noteId = req.params.noteID;
         db.Note
             .remove({ _id: noteId })
             .then(result => res.json(result))

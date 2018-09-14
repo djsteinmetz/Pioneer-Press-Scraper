@@ -52,7 +52,7 @@ module.exports = app => {
                         //adding all new articles to database
                         db.Article
                             .create(newArticleArr)
-                            .then((result) => res.json(result))//returning count of new articles to front end
+                            .then(() => res.redirect("/"))//returning count of new articles to front end
                             .catch(err => {console.log(err)});
                     })
                     .catch(err => console.log(err)); //end of rp method

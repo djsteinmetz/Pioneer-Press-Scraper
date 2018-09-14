@@ -17,6 +17,8 @@ $(document).ready(function () {
         $("#bodyinput").empty();
         $("#noteTitle").empty();
         $("#noteBody").empty();
+        $("#button").empty();
+        $("#noteSection").empty();
         // console.log(article);
         // console.log(article.title);
         $("#button").empty();
@@ -30,7 +32,10 @@ $(document).ready(function () {
           $("#noteBody").html(`${article.note.body}`);
           $("#titleinput").val(article.note.title);
           $("#bodyinput").val(article.note.body);
-          $("#button").html(`<button class='btn btn-dark thin' data-id='${article._id}' id='saveNote' method="post"  onclick="closeNav()">Update Note</button>`);
+          $("#button").html(`<div class="container" style="padding: 0px">
+          <button class='btn btn-dark thin' data-id='${article._id}' id='saveNote' method="post"  onclick="closeNav()">Update Note</button>
+          <button class='btn btn-dark thin' data-id='${article.note._id}' id='deleteNote' method="post"  onclick="closeNav()">Delete Note</button>
+          </div>`);
         }
       });
   });
@@ -43,6 +48,34 @@ $(document).ready(function () {
     $.ajax({
       method: "POST",
       url: "/articles/" + thisId,
+      data: {
+        // Value taken from title input
+        title: $("#titleinput").val(),
+        // Value taken from note textarea
+        body: $("#bodyinput").val()
+      }
+    })
+      // With that done
+      .then(function (data) {
+        // Log the response
+        console.log(data);
+        // Empty the notes section
+      });
+
+    // Also, remove the values entered in the input and textarea for note entry
+    $("#titleinput").val("");
+    $("#bodyinput").val("");
+  });
+
+  // Delete note
+  $(document).on("click", "#deleteNote", function () {
+    // Grab the id associated with the article from the submit button
+    var thisId = $(this).attr("data-id");
+
+    // Run a POST request to change the note, using what's entered in the inputs
+    $.ajax({
+      method: "POST",
+      url: `/articles/${thisId}/note/delete`,
       data: {
         // Value taken from title input
         title: $("#titleinput").val(),
