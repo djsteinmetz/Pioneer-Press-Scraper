@@ -26,7 +26,6 @@ module.exports = app => {
                 rp(options)
                     .then($ => {
                         let newArticleArr = [];
-                        console.log(`!!!!!!!!!!!!!!!!${$('.landing article.tag-search-view').children('figure').children('a').children('div.image-wrapper').find('img').attr('data-src')}`);
                         //iterating over returned articles, and creating a newArticle object from the data
                         $('.landing article.tag-search-view').each((i, element) => {
                             // Images are small ... make them bigger
