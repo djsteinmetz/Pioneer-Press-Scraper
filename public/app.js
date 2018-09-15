@@ -33,8 +33,8 @@ $(document).ready(function () {
           $("#titleinput").val(article.note.title);
           $("#bodyinput").val(article.note.body);
           $("#button").html(`<div class="container" style="padding: 0px">
-          <button class='btn btn-dark thin' data-id='${article._id}' id='saveNote' method="post"  onclick="closeNav()">Update Note</button>
-          <button class='btn btn-dark thin' data-id='${article.note._id}' id='deleteNote' method="post"  onclick="closeNav()">Delete Note</button>
+          <button class='btn btn-dark thin' data-id='${article._id}' id='saveNote' method="post" >Update Note</button>
+          <button class='btn btn-dark thin' data-id='${article.note._id}' id='deleteNote' method="post" >Delete Note</button>
           </div>`);
         }
       });
@@ -57,14 +57,15 @@ $(document).ready(function () {
     })
       // With that done
       .then(function (data) {
+        closeNav()
         // Log the response
         console.log(data);
         // Empty the notes section
       });
 
     // Also, remove the values entered in the input and textarea for note entry
-    $("#titleinput").val("");
-    $("#bodyinput").val("");
+    // $("#titleinput").val("");
+    // $("#bodyinput").val("");
   });
 
   // Delete note
@@ -87,12 +88,22 @@ $(document).ready(function () {
       .then(function (data) {
         // Log the response
         console.log(data);
+
         // Empty the notes section
       });
 
     // Also, remove the values entered in the input and textarea for note entry
-    $("#titleinput").val("");
-    $("#bodyinput").val("");
+
   });
 
 });
+function openNav() {
+  document.getElementById("mySidebar").style.height = "100%";
+}
+
+/* Set the width of the sidebar to 0 (hide it) */
+function closeNav() {
+  document.getElementById("mySidebar").style.height = "0";
+   $("#titleinput").val("");
+ $("#bodyinput").val("");
+}

@@ -17,3 +17,28 @@ var Note = mongoose.model("Note", NoteSchema);
 
 // Export the Note model
 module.exports = Note;
+
+
+// {
+//   link: "google.com",
+//   title: "Zombies invade!!!",
+//   notes: [
+//     "kjnsckdksx",
+//     "dkcsjndksjnck;dsn"
+//   ]
+// }
+
+// {
+//   link: "google.com",
+//   title: "Zombies invade!!!",
+//   notes: [
+//     {
+//       "title": "this article sucks",
+//       "body": "enough said"
+//     },
+//     {
+//       "title": "this article doesnt sucks",
+//       "body": "enough said"
+//     }
+//   ]
+// }
