@@ -40,6 +40,12 @@ $(document).ready(function () {
       });
   });
   // When you click the savenote button
+  // $(document).on("click", "#notes", function(event) {
+  //   console.log(event)
+  //   if(!event.target) {
+  //     closeNav();
+  //   }
+  // });
   $(document).on("click", "#saveNote", function () {
     // Grab the id associated with the article from the submit button
     var thisId = $(this).attr("data-id");
