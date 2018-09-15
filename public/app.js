@@ -70,12 +70,12 @@ $(document).ready(function () {
   // Delete note
   $(document).on("click", "#deleteNote", function () {
     // Grab the id associated with the article from the submit button
-    var thisId = $(this).attr("data-id");
+    const thisId = $(this).attr("data-id");
 
     // Run a POST request to change the note, using what's entered in the inputs
     $.ajax({
       method: "POST",
-      url: `/articles/${thisId}/note/delete`,
+      url: `/articles/note/${thisId}/delete`,
       data: {
         // Value taken from title input
         title: $("#titleinput").val(),
