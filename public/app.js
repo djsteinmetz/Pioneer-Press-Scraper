@@ -92,9 +92,9 @@ $(document).ready(function () {
     })
       // With that done
       .then(function (data) {
+        closeNav()
         // Log the response
         console.log(data);
-
         // Empty the notes section
       });
 
