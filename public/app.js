@@ -13,8 +13,8 @@ $(document).ready(function () {
     })
       // With that done, add the note information to the page
       .then(function (article) {
-        $("#titleinput").empty();
-        $("#bodyinput").empty();
+        $("#titleinput").val("");
+        $("#bodyinput").val("");
         $("#noteTitle").empty();
         $("#noteBody").empty();
         $("#button").empty();
