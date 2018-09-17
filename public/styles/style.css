@@ -28,7 +28,7 @@ h2 {
 #notes {
     width: 80%;
     padding: 55px;
-    
+    margin: auto;
 }
 #noteSection {
     text-decoration: underline;

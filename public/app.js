@@ -40,12 +40,7 @@ $(document).ready(function () {
       });
   });
   // When you click the savenote button
-  // $(document).on("click", "#notes", function(event) {
-  //   console.log(event)
-  //   if(!event.target) {
-  //     closeNav();
-  //   }
-  // });
+  
   $(document).on("click", "#saveNote", function () {
     // Grab the id associated with the article from the submit button
     var thisId = $(this).attr("data-id");
@@ -63,15 +58,12 @@ $(document).ready(function () {
     })
       // With that done
       .then(function (data) {
-        closeNav()
         // Log the response
         console.log(data);
         // Empty the notes section
+        closeNav();
+        clearInputs();
       });
-
-    // Also, remove the values entered in the input and textarea for note entry
-    // $("#titleinput").val("");
-    // $("#bodyinput").val("");
   });
 
   // Delete note
@@ -92,10 +84,11 @@ $(document).ready(function () {
     })
       // With that done
       .then(function (data) {
-        closeNav()
         // Log the response
         console.log(data);
         // Empty the notes section
+        closeNav();
+        clearInputs();
       });
 
     // Also, remove the values entered in the input and textarea for note entry
@@ -110,6 +103,8 @@ function openNav() {
 /* Set the width of the sidebar to 0 (hide it) */
 function closeNav() {
   document.getElementById("mySidebar").style.height = "0";
-   $("#titleinput").val("");
- $("#bodyinput").val("");
+}
+function clearInputs() {
+  $("#titleinput").val("");
+  $("#bodyinput").val("");
 }
