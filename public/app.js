@@ -105,6 +105,7 @@ function closeNav() {
   document.getElementById("mySidebar").style.height = "0";
 }
 function clearInputs() {
+  console.log('cleared');
   $("#titleinput").val("");
   $("#bodyinput").val("");
 }
